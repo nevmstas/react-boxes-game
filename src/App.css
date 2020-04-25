@@ -1,38 +1,80 @@
-.App {
+
+.app-wrapper{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "nav"
+  "pageContent";
+  background-color: dodgerblue;
+}
+
+.header{
+  grid-area: header;
+  background-color: #ccccff;
+  height: 200px;
   text-align: center;
+  vertical-align: middle;
+  font-size: 100px;
+  line-height: 200px;
+  font-weight: 900;
+  color: #2B44B6;
+}
+.nav{
+  grid-area: nav;
+  background-color: black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  position: sticky;
+  position: -webkit-sticky;
+  top:0;
+}
+.nav ul{
+    list-style-type: none;
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightskyblue;  
+    border-radius: 30px;
+}
+.nav li{
+  float:left;
+}
+.nav li a{
+  display: block;
+  color:white;
+  text-align: center;
+  padding: 14px 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav li a:hover:not(.about-btn){
+  background-color: #80bfff;
+}
+.about-btn
+{
+   background-color: #6666ff;
+   border-radius: 30px;
+}
+.nav img{
+  width: 86px;
+  background-color: black;
+  border-radius: 100px;
+  float: left;
+}
+.page-content{
+  grid-area: pageContent;
+  background-color: dodgerblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game-field{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 500px;
+  height: 500px;
+  align-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
