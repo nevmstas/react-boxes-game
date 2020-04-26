@@ -1,29 +1,18 @@
 import React from 'react'
 
+const PuzzleItem = (props)=>{
+    return <div id={props.value} className="puzzle-block"></div>
+}
+
 const Game = () =>{
+    const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
+    const puzzleItems = ids.map((id) => 
+        <PuzzleItem key={id.toString()} value={id}/>)
+
     return(
-        // <div className='game-field'>
-        //     <div id="1" className="puzzle-block" onClick={HideBlock(1)}></div>
-        //     <div id="2" className="puzzle-block" onClick={HideBlock(2)}></div>
-        //     <div id="3" className="puzzle-block" onClick={HideBlock(3)}></div>
-        //     <div id="4" className="puzzle-block" onClick={HideBlock(4)}></div>
-        //     <div id="5" className="puzzle-block" onClick={HideBlock(5)}></div>
-        //     <div id="6" className="puzzle-block" onClick={HideBlock(6)}></div>
-        //     <div id="7" className="puzzle-block" onClick={HideBlock(7)}></div>
-        //     <div id="8" className="puzzle-block" onClick={HideBlock(8)}></div>
-        //     <div id="9" className="puzzle-block" onClick={HideBlock(9)}></div>
-        //     <div className="reset-btn" onClick={Reset()}>Reset</div>
-        // </div>
          <div className='game-field'>
-            <div id="1" className="puzzle-block"></div>
-            <div id="2" className="puzzle-block"></div>
-            <div id="3" className="puzzle-block"></div>
-            <div id="4" className="puzzle-block"></div>
-            <div id="5" className="puzzle-block"></div>
-            <div id="6" className="puzzle-block"></div>
-            <div id="7" className="puzzle-block"></div>
-            <div id="8" className="puzzle-block"></div>
-            <div id="9" className="puzzle-block"></div>
+             {puzzleItems}        
             <div className="reset-btn">Reset</div>
         </div>
     )

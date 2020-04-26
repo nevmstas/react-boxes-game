@@ -4,9 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import Clock from './DocumentationTests/Tests'
+import Toggle from './DocumentationTests/Toggle'
+import LoginControl from './DocumentationTests/LoginControl'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <Clock />
+    <Toggle />
+    <LoginControl />
   </React.StrictMode>,
   document.getElementById('root')
 );
