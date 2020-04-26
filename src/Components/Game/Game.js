@@ -4,19 +4,51 @@ const PuzzleItem = (props)=>{
     return <div id={props.value} className="puzzle-block"></div>
 }
 
-const Game = () =>{
-    const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+class Game extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {}
+
+        this.handleResetClick = this.handleResetClick.bind(this);
+    }
+
     
-    const puzzleItems = ids.map((id) => 
+    handleResetClick(){
+        
+    }
+
+    render(){
+        const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const puzzleItems = ids.map((id) => 
         <PuzzleItem key={id.toString()} value={id}/>)
 
-    return(
-         <div className='game-field'>
-             {puzzleItems}        
-            <div className="reset-btn">Reset</div>
-        </div>
-    )
+        return(
+            <div className='game-field'>
+                {puzzleItems}        
+               <ResetBtn onClick = {this.handleResetClick} />
+           </div>)
+    }
+
 }
+
+function ResetBtn(props){
+    return <div onClick={props.onClick} className="reset-btn">Reset</div>
+}
+
+// const Game = () =>{
+//     const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
+//     const puzzleItems = ids.map((id) => 
+//         <PuzzleItem key={id.toString()} value={id}/>)
+
+//     return(
+//          <div className='game-field'>
+//              {puzzleItems}        
+//             <ResetBtn onClick = {this.handleResetClick} />
+//         </div>
+//     )
+// }
 
 export default Game
 
