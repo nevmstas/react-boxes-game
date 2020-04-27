@@ -1,40 +1,61 @@
 import React from 'react'
 
-const PuzzleItem = (props)=>{
-    return <div id={props.value} className="puzzle-block"></div>
-}
-
-
 class Game extends React.Component{
     constructor(props){
-        super(props)
-        this.state = {}
+        super(props);
+        this.state = {
+            score: 0,
+            itemClass: 'visible'           
+        }
 
         this.handleResetClick = this.handleResetClick.bind(this);
+        this.handleHideClick = this.handleHideClick.bind(this);
     }
 
-    
+    // componentDidMount(){
+    //     this.setState({
+    //         itemClass:'visible'
+    //     })
+    // }
     handleResetClick(){
-        
+        //const element = document.getElementById()
+    }
+
+    handleHideClick(){
+        this.setState(prevState => {
+            return {
+                score: prevState.score++,
+                itemClass:'hidden'
+            }
+        });
     }
 
     render(){
         const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        const puzzleItems = ids.map((id) => 
-        <PuzzleItem key={id.toString()} value={id}/>)
+        const puzzleItems = ids.map((id) => {
+            return <PuzzleItem id={id} onHide ={this.handleHideClick} visibility={this.state.itemClass}/>
+        });
 
         return(
             <div className='game-field'>
                 {puzzleItems}        
                <ResetBtn onClick = {this.handleResetClick} />
+                <div>{this.state.score}</div>
            </div>)
     }
 
 }
 
+const PuzzleItem = (props)=>{
+    return <div id={props.id} onClick={props.onHide} className="puzzle-block" style={{visibility:props.visibility}}></div>
+}
+
 function ResetBtn(props){
     return <div onClick={props.onClick} className="reset-btn">Reset</div>
 }
+
+export default Game
+
 
 // const Game = () =>{
 //     const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -50,7 +71,6 @@ function ResetBtn(props){
 //     )
 // }
 
-export default Game
 
 // var counter = 0;
 // var pointMultiplier = 0;
