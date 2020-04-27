@@ -1,17 +1,12 @@
 
 .app-wrapper{
   font-family: 'Work Sans', sans-serif;
-  display: grid;
-  grid-template-areas: 
-  "header"
-  "nav"
-  "pageContent"
-  "footer";
   background-color: dodgerblue;
+  display: flex;
+  flex-direction: column;
 }
 
 .header{
-  grid-area: header;
   background-color: #ccccff;
   height: 200px;
   text-align: center;
@@ -22,7 +17,6 @@
   color: #2B44B6;
 }
 .nav{
-  grid-area: nav;
   background-color: black;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   position: sticky;
@@ -30,6 +24,8 @@
   top:0;
 }
 .nav ul{
+    /* display: flex;
+    flex-wrap: wrap; */
     list-style-type: none;
     margin: 0;
     margin-right: 20px;
@@ -65,17 +61,25 @@
   float: left;
 }
 .page-content{
-  grid-area: pageContent;
+  display: flex;
+  justify-content: center;
   background-color: dodgerblue;
+
+  height: 900px;
 }
 
 .game-field{
   display: grid;
-  grid-template-columns: 140px 140px 140px;
-  grid-template-rows: 140px 140px 140px;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  grid-template-columns: 140px 140px 100px;
+  grid-template-rows: 140px 140px 170px;
+  align-items: center;
+}
+
+.game-page{
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .puzzle-block
@@ -83,7 +87,7 @@
     height: 100px;
     width: 100px;
     background-color: greenyellow;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px #999;    
 }
 
 .puzzle-block:active{
@@ -107,6 +111,7 @@
   box-shadow: 0 9px #999;
   align-items: center;
   justify-content: center;
+
 }
 
 .reset-btn:active{
@@ -123,6 +128,18 @@ footer{
   align-items: center;
   justify-content: center;
 }
+
+.score{
+  display: flex;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 40px;
+  color: white;
+  font-weight: 900;
+  justify-content: center;
+  width: 370px;
+}
+
 
 
 

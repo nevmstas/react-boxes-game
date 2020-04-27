@@ -8,7 +8,7 @@ const Navbar = () => {
         <ul>
           <li><a href='#Game'>Game</a></li>
           <li><a href='#Rules'>Rules</a></li>
-          <li style={{float:"right"}}><a className='about-btn' href='#About'>About</a></li>
+          <li className='about-btn'><a className='about-btn' href='#About'>About</a></li>
         </ul>
       </nav>
     )

@@ -5,53 +5,87 @@ class Game extends React.Component{
         super(props);
         this.state = {
             score: 0,
-            itemClass: 'visible'           
+            pointMultiplier: 0,
+            bombID: null
         }
 
         this.handleResetClick = this.handleResetClick.bind(this);
-        this.handleHideClick = this.handleHideClick.bind(this);
+        this.handleChangeScoreClick = this.handleChangeScoreClick.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.setState({
-    //         itemClass:'visible'
-    //     })
-    // }
     handleResetClick(){
-        //const element = document.getElementById()
+        
     }
+    
+    // checkBomb(bombID, itemID){
+    //     if(bombID === itemID) return true
+    //     return false
+    // }
 
-    handleHideClick(){
-        this.setState(prevState => {
-            return {
-                score: prevState.score++,
-                itemClass:'hidden'
-            }
-        });
+    handleChangeScoreClick(){       
+            this.setState(prevState => {
+                return {
+                    score: (prevState.score++) + prevState.pointMultiplier,
+                }
+            });
+            this.setState(prevState => {
+                return {
+                    pointMultiplier: prevState.pointMultiplier++
+                }
+            });     
     }
 
     render(){
         const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const bombID = ids[Math.floor(Math.random() * ids.length)];
+        
         const puzzleItems = ids.map((id) => {
-            return <PuzzleItem id={id} onHide ={this.handleHideClick} visibility={this.state.itemClass}/>
+            return <PuzzleItem id={id} onChangeScore={this.handleChangeScoreClick} visibility={this.state.test} />
         });
 
         return(
-            <div className='game-field'>
-                {puzzleItems}        
-               <ResetBtn onClick = {this.handleResetClick} />
-                <div>{this.state.score}</div>
+            <div className='game-page'>
+                <Score score = {this.state.score}/>
+                <div className='game-field'>                
+                    {puzzleItems} 
+                </div>       
+                <ResetBtn onClick = {this.handleResetClick} />            
            </div>)
     }
-
 }
 
-const PuzzleItem = (props)=>{
-    return <div id={props.id} onClick={props.onHide} className="puzzle-block" style={{visibility:props.visibility}}></div>
+class PuzzleItem extends React.Component{
+    constructor(props){
+        super(props);
+        this.state ={
+            visibility: 'visible'
+        }
+
+        this.handleHideClick = this.handleHideClick.bind(this)
+    }
+
+    handleHideClick(){
+        this.setState({
+            visibility: 'hidden'
+        })
+    }
+
+    render(){
+        return <div id={this.props.id} onClick={()=>{this.handleHideClick(); this.props.onChangeScore()}} className="puzzle-block" style={{visibility:this.state.visibility}}></div>
+    }
 }
 
 function ResetBtn(props){
     return <div onClick={props.onClick} className="reset-btn">Reset</div>
+}
+
+const Score = (props) =>{
+    return(
+        <div className="score">
+            <p>Score:</p>
+            <p>{props.score}</p>
+        </div>
+    )
 }
 
 export default Game
