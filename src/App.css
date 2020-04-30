@@ -97,8 +97,8 @@
 
 .reset-btn{
   display: flex;
-  height: 100px;
-  width: 100px;
+  height: 130px;
+  width: 130px;
   background-color:palevioletred ;
   font-size: 20px;
   color: white;
@@ -108,7 +108,7 @@
   cursor: pointer;
   border-radius: 50%;
   user-select: none;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 12px #999;
   align-items: center;
   justify-content: center;
 

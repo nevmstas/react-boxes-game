@@ -8,12 +8,15 @@ import Clock from './DocumentationTests/Tests'
 import Toggle from './DocumentationTests/Toggle'
 import LoginControl from './DocumentationTests/LoginControl'
 
+import Calculator  from './DocumentationTests/Temperature/Calculator'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <Clock />
     <Toggle />
     <LoginControl />
+    <Calculator />
   </React.StrictMode>,
   document.getElementById('root')
 );
