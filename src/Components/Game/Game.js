@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import ResetBtn from './ResetBtn'
 import PuzzleItem from './PuzzleItem'
 import Score from './Score'
@@ -26,12 +26,15 @@ class Game extends React.Component{
         
         this.handleResetClick = this.handleResetClick.bind(this);
         this.handleChangeScoreClick = this.handleChangeScoreClick.bind(this);
-
-        this.onBombClick = this.onBombClick.bind(this);
         this.onHideItem = this.onHideItem.bind(this);
     }
-     
+
+    componentDidMount(){
+        this.getRandomBomb()
+    }
+
     handleResetClick(){
+        this.getRandomBomb()
         this.setState({
             pointMultiplier: 0   
         });
@@ -42,16 +45,31 @@ class Game extends React.Component{
         )
     }
 
-    onBombClick(){
-        this.setState({score: 0})
+    getRandomBomb(){
+        const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        this.setState({
+            bombID: ids[Math.floor(Math.random() * ids.length)]
+        })
     }
 
     onHideItem(id){
         console.log(id)
+        console.log('bomb - ',this.state.bombID)
+
+
         this.setState(
             this.state.items.map(item => {
                 if(item.id === id){
-                    item.visibility = 'hidden'
+                    if(id === this.state.bombID){
+                        this.handleResetClick();
+                        this.getRandomBomb()
+                        this.setState({
+                            score: 0, pointMultiplier: 0
+                        })
+                    }else{
+                        item.visibility = 'hidden'
+                    }
+
                 }
             })
         )
@@ -73,9 +91,8 @@ class Game extends React.Component{
     render(){
         const puzzleItems = this.state.items.map((item) => {
             return <PuzzleItem id={item.id} 
-                                onChangeScore={this.handleChangeScoreClick} 
-                                onHide ={this.onHideItem}                               
-                                checkBomb = {this.onBombClick}
+                                onHide ={this.onHideItem}     
+                                onChangeScore={this.handleChangeScoreClick}                        
                                 visibility = {item.visibility}/>
         });
 
@@ -92,59 +109,4 @@ class Game extends React.Component{
 
 
 export default Game
-
-
-// const Game = () =>{
-//     const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    
-//     const puzzleItems = ids.map((id) => 
-//         <PuzzleItem key={id.toString()} value={id}/>)
-
-//     return(
-//          <div className='game-field'>
-//              {puzzleItems}        
-//             <ResetBtn onClick = {this.handleResetClick} />
-//         </div>
-//     )
-// }
-
-// var counter = 0;
-// var pointMultiplier = 0;
-// var bombId = '';
-
-// function HideBlock(id) {
-//     var block = document.getElementById(id);
-//     if (id !== bombId) {
-//         block.style.visibility = "hidden";
-//         updateScore();
-//     } else {
-//         cleanCounter();
-//         Reset();
-//     }
-// }
-
-// function ErrorBlock() {
-//     var allIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-//     bombId = allIds[Math.floor(Math.random() * allIds.length)];
-// }
-
-// function cleanCounter() {
-//     counter = 0;
-//     pointMultiplier = 1;
-//     document.getElementById('countId').innerHTML = 'Score: ' + counter;
-// }
-
-// function updateScore() {
-//     counter++;
-//     counter = counter + pointMultiplier;
-//     document.getElementById('countId').innerHTML = 'Score: ' + counter;
-//     pointMultiplier++;
-// }
-
-// function Reset() {
-//     pointMultiplier = 0;
-//     ErrorBlock();
-//     for(let i=1;i<=9;i++)
-//         document.getElementById(i).css.visibility = 'visible';
-// }
 
