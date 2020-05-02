@@ -1,40 +1,60 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import ResetBtn from './ResetBtn'
+import PuzzleItem from './PuzzleItem'
+import Score from './Score'
 
 class Game extends React.Component{
     constructor(props){
         super(props);
 
+        this.state ={
+            score : 0,
+            items:[
+                {id: 1, visibility: 'visible'},
+                {id: 2, visibility: 'visible'},
+                {id: 3, visibility: 'visible'},
+                {id: 4, visibility: 'visible'},
+                {id: 5, visibility: 'visible'},
+                {id: 6, visibility: 'visible'},
+                {id: 7, visibility: 'visible'},
+                {id: 8, visibility: 'visible'},
+                {id: 9, visibility: 'visible'},
+            ],
+            bombID: null,
+            pointMultiplier:0
+        }
+        
         this.handleResetClick = this.handleResetClick.bind(this);
         this.handleChangeScoreClick = this.handleChangeScoreClick.bind(this);
 
-        this.checkBomb = this.checkBomb.bind(this);
-
-        //this.handleChangeVisibility = this.handleChangeVisibility.bind(this);
-
-        this.state = {
-            score: 0,
-            pointMultiplier: 0,
-            bombID: null,
-            resetVisible: null
-            //visibility: 'visible'
-        }
-
-
+        this.onBombClick = this.onBombClick.bind(this);
+        this.onHideItem = this.onHideItem.bind(this);
     }
-
-    // handleChangeVisibility(){
-    //     this.setState({visibility: 'hidden'})
-    // }
-
+     
     handleResetClick(){
         this.setState({
-            pointMultiplier: 0,
-            resetVisible:'visible'      
+            pointMultiplier: 0   
         });
+        this.setState(
+            this.state.items.map(item => {
+                item.visibility = 'visible'
+            })
+        )
     }
 
-    checkBomb(){
+    onBombClick(){
         this.setState({score: 0})
+    }
+
+    onHideItem(id){
+        console.log(id)
+        this.setState(
+            this.state.items.map(item => {
+                if(item.id === id){
+                    item.visibility = 'hidden'
+                }
+            })
+        )
     }
     
     handleChangeScoreClick(){       
@@ -51,16 +71,12 @@ class Game extends React.Component{
     }
 
     render(){
-        const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        const bombID = ids[Math.floor(Math.random() * ids.length)];
-        const resetVisible = this.state.resetVisible;
-        const puzzleItems = ids.map((id) => {
-            return <PuzzleItem id={id} 
+        const puzzleItems = this.state.items.map((item) => {
+            return <PuzzleItem id={item.id} 
                                 onChangeScore={this.handleChangeScoreClick} 
-                                //onChangeVisibility={this.handleChangeVisibility} 
-                                resetVisible={resetVisible} 
-                                bombID= {bombID}
-                                checkBomb = {this.checkBomb}/>
+                                onHide ={this.onHideItem}                               
+                                checkBomb = {this.onBombClick}
+                                visibility = {item.visibility}/>
         });
 
         return(
@@ -74,69 +90,6 @@ class Game extends React.Component{
     }
 }
 
-class PuzzleItem extends React.Component{
-    constructor(props){
-        super(props);
-        
-        this.handleHideClick = this.handleHideClick.bind(this);
-        this.checkBomb = this.handleCheckBomb.bind(this);
-        this.state ={
-            visibility: 'visible'
-        }
-
-    }
-
-    handleHideClick(){
-        this.setState({
-            visibility: 'hidden'
-        })
-    }
-    
-    // handleHideClick(){
-    //     this.props.onChangeVisibility();
-    // }
-
-    handleCheckBomb()
-    {
-        if(this.props.id===this.props.bombID)
-            this.props.checkBomb()
-    }
-    
-    
-    render(){
-        return <div id={this.props.id} 
-                    onClick={()=>{this.handleHideClick(); this.props.onChangeScore()}} 
-                    className="puzzle-block" 
-                    style={{visibility:this.props.resetVisible===null?this.state.visibility:this.props.resetVisible}}></div>
-    }
-}
-
-
-
-class ResetBtn extends React.Component{
-    constructor(props){
-        super(props)
-
-        this.handleResetClick = this.handleResetClick.bind(this);
-    }
-
-    handleResetClick(){
-        this.props.onClick();
-    }
-
-    render(){
-        return <div onClick={this.props.onClick} className="reset-btn">Reset</div>
-    }
-}
-
-const Score = (props) =>{
-    return(
-        <div className="score">
-            <p>Score:</p>
-            <p>{props.score}</p>
-        </div>
-    )
-}
 
 export default Game
 
@@ -154,7 +107,6 @@ export default Game
 //         </div>
 //     )
 // }
-
 
 // var counter = 0;
 // var pointMultiplier = 0;

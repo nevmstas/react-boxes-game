@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './App.css';
 import Header from './Components/Header'
 import Navbar from './Components/Navbar'
@@ -21,8 +20,6 @@ const App = () => {
           <Route path='/Game' component={Game}/>
           <Route path='/Rules' component={Rules}/>
           <Route path='/About' component={About}/>
-          {/* <Game />
-          <Rules /> */}
         </div>        
         <Footer />       
       </div>
