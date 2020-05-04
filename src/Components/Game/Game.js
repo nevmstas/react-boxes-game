@@ -3,6 +3,9 @@ import ResetBtn from './ResetBtn'
 import PuzzleItem from './PuzzleItem'
 import Score from './Score'
 
+import CountdownTimer from '../Timer/CountdownTimer'
+import Timer from '../Timer/Timer'
+
 class Game extends React.Component{
     constructor(props){
         super(props);
@@ -98,6 +101,8 @@ class Game extends React.Component{
 
         return(
             <div className='game-page'>
+                {/* <CountdownTimer /> */}
+                <Timer />
                 <Score score = {this.state.score}/>
                 <div className='game-field'>                
                     {puzzleItems} 

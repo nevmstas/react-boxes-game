@@ -44,7 +44,9 @@
   padding: 14px 50px;
   text-decoration: none;
   text-transform: uppercase;
+  transition-duration: 0.3s;
 }
+
 .nav li a:hover:not(.about-btn){
   background-color: #80bfff;
 }
@@ -87,7 +89,8 @@
     height: 100px;
     width: 100px;
     background-color: greenyellow;
-    box-shadow: 0 9px #999;    
+    box-shadow: 0 9px #999;
+    transition-duration: 0.05s; 
 }
 
 .puzzle-block:active{
@@ -111,7 +114,7 @@
   box-shadow: 0 12px #999;
   align-items: center;
   justify-content: center;
-
+  transition-duration: 0.1s;
 }
 
 .reset-btn:active{
@@ -138,6 +141,45 @@ footer{
   font-weight: 900;
   justify-content: center;
   width: 370px;
+}
+
+.rules-container{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 50px;
+
+  color: white;
+  font-size: 20px;
+}
+.rules-container a{
+  font-size: 30px;
+  margin-top: 50px;
+  color: #D5DBDB;
+  text-decoration: none;
+  transition-duration: 0.3s;
+}
+.rules-container div {
+  margin: 0 60px 30px 40px;
+}
+
+.rules-container a:hover {
+  color: white;
+}
+
+.rules-list {
+  width: 400px;
+}
+
+.rules-container li{
+  margin-bottom: 60px;
+  margin-right: 40px;
+}
+
+.example-img img{
+  height: 500px;
+  width: 500px;
 }
 
 
