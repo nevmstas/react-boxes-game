@@ -13,10 +13,9 @@ class Timer extends React.Component{
         this.handleChangeCounter = this.handleChangeCounter.bind(this)
     }
 
-
     handleChangeCounter(){
         this.setState({
-            seconds: 60,
+            seconds: 10,
             isOn:true
         })
         if(!this.state.isOn){
@@ -25,6 +24,8 @@ class Timer extends React.Component{
                 if(this.state.seconds === 0){
                     clearInterval(timer)
                     this.setState({isOn:false})
+                    this.props.updateLastScore()                  
+                    this.props.newGame()
                 }else{
                 this.setState(prevState => ({
                     seconds: prevState.seconds-1

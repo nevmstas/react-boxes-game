@@ -5,6 +5,7 @@ import Score from './Score'
 
 import CountdownTimer from '../Timer/CountdownTimer'
 import Timer from '../Timer/Timer'
+import LastScore from './LastScore'
 
 class Game extends React.Component{
     constructor(props){
@@ -24,16 +25,33 @@ class Game extends React.Component{
                 {id: 9, visibility: 'visible'},
             ],
             bombID: null,
-            pointMultiplier:0
+            pointMultiplier:0           
         }
         
+        this.lastScore = 0;
+
+
         this.handleResetClick = this.handleResetClick.bind(this);
         this.handleChangeScoreClick = this.handleChangeScoreClick.bind(this);
         this.onHideItem = this.onHideItem.bind(this);
+        this.resetPoints = this.resetPoints.bind(this);
+        this.newGame = this.newGame.bind(this)
+        this.updateLastScore = this.updateLastScore.bind(this)
     }
 
     componentDidMount(){
         this.getRandomBomb()
+    }
+
+    resetPoints(){
+        this.setState({
+            score: 0,
+            pointMultiplier: 0
+        })
+    }
+
+    updateLastScore(){
+        this.lastScore = this.state.score;
     }
 
     handleResetClick(){
@@ -48,11 +66,18 @@ class Game extends React.Component{
         )
     }
 
+
     getRandomBomb(){
         const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         this.setState({
             bombID: ids[Math.floor(Math.random() * ids.length)]
         })
+    }
+
+    newGame(){
+        this.handleResetClick();
+        this.getRandomBomb()
+        this.resetPoints()
     }
 
     onHideItem(id){
@@ -64,15 +89,10 @@ class Game extends React.Component{
             this.state.items.map(item => {
                 if(item.id === id){
                     if(id === this.state.bombID){
-                        this.handleResetClick();
-                        this.getRandomBomb()
-                        this.setState({
-                            score: 0, pointMultiplier: 0
-                        })
+                        this.newGame()
                     }else{
                         item.visibility = 'hidden'
                     }
-
                 }
             })
         )
@@ -100,15 +120,19 @@ class Game extends React.Component{
         });
 
         return(
-            <div className='game-page'>
-                {/* <CountdownTimer /> */}
-                <Timer />
-                <Score score = {this.state.score}/>
-                <div className='game-field'>                
-                    {puzzleItems} 
-                </div>       
-                <ResetBtn onClick = {this.handleResetClick}/>            
-           </div>)
+            <React.Fragment>
+                <div className='game-page'>
+                    <Timer newGame = {this.newGame} updateLastScore = {this.updateLastScore}/>
+                    <Score score = {this.state.score}/>
+                    <div className='game-field'>                
+                        {puzzleItems} 
+                    </div>       
+                    <ResetBtn onClick = {this.handleResetClick}/>            
+            </div>
+            <div>
+               <LastScore lastScore = {this.lastScore}/> 
+            </div>
+           </React.Fragment>)
     }
 }
 
