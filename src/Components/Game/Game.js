@@ -25,10 +25,10 @@ class Game extends React.Component{
                 {id: 9, visibility: 'visible'},
             ],
             bombID: null,
-            pointMultiplier:0           
+            pointMultiplier:0    
         }
         
-        this.lastScore = 0;
+        this.lastScore = [];
 
 
         this.handleResetClick = this.handleResetClick.bind(this);
@@ -51,7 +51,7 @@ class Game extends React.Component{
     }
 
     updateLastScore(){
-        this.lastScore = this.state.score;
+        this.lastScore.push(this.state.score);
     }
 
     handleResetClick(){
@@ -124,11 +124,12 @@ class Game extends React.Component{
                 <div className='game-page'>
                     <Timer newGame = {this.newGame} updateLastScore = {this.updateLastScore}/>
                     <Score score = {this.state.score}/>
-                    <div className='game-field'>                
-                        {puzzleItems} 
-                    </div>       
-                    <ResetBtn onClick = {this.handleResetClick}/>            
+                        <div className='game-field'>                
+                            {puzzleItems} 
+                        </div>      
+                        <ResetBtn onClick = {this.handleResetClick}/>      
             </div>
+            
             <div>
                <LastScore lastScore = {this.lastScore}/> 
             </div>

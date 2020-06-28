@@ -13,6 +13,7 @@ class Timer extends React.Component{
         this.handleChangeCounter = this.handleChangeCounter.bind(this)
     }
 
+    
     handleChangeCounter(){
         this.setState({
             seconds: 10,
@@ -35,11 +36,22 @@ class Timer extends React.Component{
     }
 
     render(){
+        const seconds = this.state.seconds;
+        const numberSize = () => {
+            if(seconds<10&&seconds !== 0) return '50px'           
+        }
+        const color = () => {
+            if(seconds<10&&seconds !== 0) return 'red'
+        }
         return(
-            <div className='timer'>
-                <button onClick ={this.handleChangeCounter}>Start</button>
-                <div>Timer: {this.state.seconds}</div>
+            <React.Fragment>
+            <div className='timer'>                
+                <button onClick ={this.handleChangeCounter} className = {'spin circle'}>Start</button>
+                <div>Timer:</div>&nbsp;   
+                <div style={{fontSize: numberSize(), color: color()}} className = 'time-number'>{this.state.seconds}</div>                      
             </div>
+
+            </React.Fragment>
         )
     }
 }

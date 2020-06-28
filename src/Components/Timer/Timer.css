@@ -1,20 +1,29 @@
 .timer{
     display: flex;
     text-align: center;
+    overflow: auto;
     padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 40px;
     color: white;
     font-weight: 900;
     justify-content: center;
-    width: 370px;   
+    width: 370px;
+
+}
+
+.time-number{
+    transition: all 0.5s;
 }
 
 .timer button{
+    width: 65px;
+    height: 65px;
     font-size: 20px;
     border-radius: 50%;
     border: 0px;
     background-color: palevioletred;
     color: white;
-    margin-right: 20px;
-    
+    margin-right: 20px; 
 }
+

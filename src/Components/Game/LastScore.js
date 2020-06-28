@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 const LastScore = (props) =>{
-    
-    
-    return <div>
-        <p>Your last score:</p><p>{props.lastScore}</p>
-    </div>
+      
+    return (
+        <div className = {'last-score'}>
+            <p>Your last score:</p><p>{props.lastScore.join(' ')}</p>
+        </div>
+    ) 
 }
 
 export default LastScore

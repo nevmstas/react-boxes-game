@@ -141,6 +141,7 @@ footer{
   font-weight: 900;
   justify-content: center;
   width: 370px;
+  transition: all 1s;
 }
 
 .rules-container{
@@ -180,6 +181,10 @@ footer{
 .example-img img{
   height: 500px;
   width: 500px;
+}
+
+.last-score{
+  color: white
 }
 
 
