@@ -15,6 +15,7 @@ class Timer extends React.Component{
 
     
     handleChangeCounter(){
+        this.props.newGame()
         this.setState({
             seconds: 10,
             isOn:true

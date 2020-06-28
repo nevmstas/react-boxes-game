@@ -25,10 +25,11 @@ class Game extends React.Component{
                 {id: 9, visibility: 'visible'},
             ],
             bombID: null,
-            pointMultiplier:0    
+            pointMultiplier:0,
+            lastScore: []
         }
-        
-        this.lastScore = [];
+
+        //this.lastScore = [];
 
 
         this.handleResetClick = this.handleResetClick.bind(this);
@@ -51,13 +52,24 @@ class Game extends React.Component{
     }
 
     updateLastScore(){
-        this.lastScore.push(this.state.score);
+        let lastScoreArr = this.state.lastScore;
+        if(lastScoreArr.length > 9 ){
+            this.setState({
+                lastScore:[]
+            })
+        }
+        // this.lastScore.push(this.state.score);
+        this.setState(state =>{
+            const lastScore = [...state.lastScore, state.score]
+
+            return {lastScore}
+        })
     }
 
     handleResetClick(){
         this.getRandomBomb()
         this.setState({
-            pointMultiplier: 0   
+            pointMultiplier: 0
         });
         this.setState(
             this.state.items.map(item => {
@@ -97,8 +109,8 @@ class Game extends React.Component{
             })
         )
     }
-    
-    handleChangeScoreClick(){       
+
+    handleChangeScoreClick(){
             this.setState(prevState => {
                 return {
                     score: (prevState.score++) + prevState.pointMultiplier,
@@ -108,30 +120,30 @@ class Game extends React.Component{
                 return {
                     pointMultiplier: prevState.pointMultiplier++
                 }
-            });     
+            });
     }
 
     render(){
         const puzzleItems = this.state.items.map((item) => {
-            return <PuzzleItem id={item.id} 
-                                onHide ={this.onHideItem}     
-                                onChangeScore={this.handleChangeScoreClick}                        
+            return <PuzzleItem id={item.id}
+                                onHide ={this.onHideItem}
+                                onChangeScore={this.handleChangeScoreClick}
                                 visibility = {item.visibility}/>
         });
 
         return(
             <React.Fragment>
                 <div className='game-page'>
-                    <Timer newGame = {this.newGame} updateLastScore = {this.updateLastScore}/>
+                    <Timer newGame = {this.newGame} updateLastScore = {this.updateLastScore} newGame = {this.newGame}/>
                     <Score score = {this.state.score}/>
-                        <div className='game-field'>                
-                            {puzzleItems} 
-                        </div>      
-                        <ResetBtn onClick = {this.handleResetClick}/>      
+                        <div className='game-field'>
+                            {puzzleItems}
+                        </div>
+                        <ResetBtn onClick = {this.handleResetClick}/>
             </div>
-            
+
             <div>
-               <LastScore lastScore = {this.lastScore}/> 
+               <LastScore lastScore = {this.state.lastScore}/>
             </div>
            </React.Fragment>)
     }

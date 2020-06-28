@@ -184,7 +184,11 @@ footer{
 }
 
 .last-score{
-  color: white
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 100px;
+  margin-top: 300px;  
 }
 
 
