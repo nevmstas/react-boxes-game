@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-boxes-game/static/css/main.4960f358.chunk.css",
-    "main.js": "/react-boxes-game/static/js/main.cd57b9dc.chunk.js",
-    "main.js.map": "/react-boxes-game/static/js/main.cd57b9dc.chunk.js.map",
+    "main.js": "/react-boxes-game/static/js/main.32f4e314.chunk.js",
+    "main.js.map": "/react-boxes-game/static/js/main.32f4e314.chunk.js.map",
     "runtime-main.js": "/react-boxes-game/static/js/runtime-main.4bc65367.js",
     "runtime-main.js.map": "/react-boxes-game/static/js/runtime-main.4bc65367.js.map",
     "static/js/2.b525bd69.chunk.js": "/react-boxes-game/static/js/2.b525bd69.chunk.js",
     "static/js/2.b525bd69.chunk.js.map": "/react-boxes-game/static/js/2.b525bd69.chunk.js.map",
     "index.html": "/react-boxes-game/index.html",
-    "precache-manifest.d0bdcceed844a7395b689c22f3d5f2ec.js": "/react-boxes-game/precache-manifest.d0bdcceed844a7395b689c22f3d5f2ec.js",
+    "precache-manifest.fca54ebce7588f09339b0f5fda852a62.js": "/react-boxes-game/precache-manifest.fca54ebce7588f09339b0f5fda852a62.js",
     "service-worker.js": "/react-boxes-game/service-worker.js",
     "static/css/main.4960f358.chunk.css.map": "/react-boxes-game/static/css/main.4960f358.chunk.css.map",
     "static/js/2.b525bd69.chunk.js.LICENSE.txt": "/react-boxes-game/static/js/2.b525bd69.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.4bc65367.js",
     "static/js/2.b525bd69.chunk.js",
     "static/css/main.4960f358.chunk.css",
-    "static/js/main.cd57b9dc.chunk.js"
+    "static/js/main.32f4e314.chunk.js"
   ]
 }
