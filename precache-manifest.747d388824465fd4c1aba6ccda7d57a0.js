@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d1423f8070618ace7b31e3d354be9d7e",
+    "revision": "668472eef4ed7ad63a19ca8aba97c71f",
     "url": "/react-boxes-game/index.html"
   },
   {
-    "revision": "8b5640f60d3bd57d9e8f",
+    "revision": "110ca6fd039a62333600",
     "url": "/react-boxes-game/static/css/main.4960f358.chunk.css"
   },
   {
-    "revision": "a56bf43ada0080b62562",
-    "url": "/react-boxes-game/static/js/2.18c1c479.chunk.js"
+    "revision": "7a6dd9966099bbfd4ca0",
+    "url": "/react-boxes-game/static/js/2.b525bd69.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/react-boxes-game/static/js/2.18c1c479.chunk.js.LICENSE.txt"
+    "url": "/react-boxes-game/static/js/2.b525bd69.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8b5640f60d3bd57d9e8f",
-    "url": "/react-boxes-game/static/js/main.82104522.chunk.js"
+    "revision": "110ca6fd039a62333600",
+    "url": "/react-boxes-game/static/js/main.6f327900.chunk.js"
   },
   {
     "revision": "63a70d30d2ab7b76967c",
