@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-boxes-game/static/css/main.4960f358.chunk.css",
+    "main.js": "/react-boxes-game/static/js/main.add2bbfc.chunk.js",
+    "main.js.map": "/react-boxes-game/static/js/main.add2bbfc.chunk.js.map",
+    "runtime-main.js": "/react-boxes-game/static/js/runtime-main.4bc65367.js",
+    "runtime-main.js.map": "/react-boxes-game/static/js/runtime-main.4bc65367.js.map",
+    "static/js/2.18c1c479.chunk.js": "/react-boxes-game/static/js/2.18c1c479.chunk.js",
+    "static/js/2.18c1c479.chunk.js.map": "/react-boxes-game/static/js/2.18c1c479.chunk.js.map",
+    "index.html": "/react-boxes-game/index.html",
+    "precache-manifest.176bb96bf79b8c4765bbe99113f17aae.js": "/react-boxes-game/precache-manifest.176bb96bf79b8c4765bbe99113f17aae.js",
+    "service-worker.js": "/react-boxes-game/service-worker.js",
+    "static/css/main.4960f358.chunk.css.map": "/react-boxes-game/static/css/main.4960f358.chunk.css.map",
+    "static/js/2.18c1c479.chunk.js.LICENSE.txt": "/react-boxes-game/static/js/2.18c1c479.chunk.js.LICENSE.txt",
+    "static/media/dannyghost.png": "/react-boxes-game/static/media/dannyghost.53941a1f.png",
+    "static/media/gameExample2.png": "/react-boxes-game/static/media/gameExample2.7ae79fb2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4bc65367.js",
+    "static/js/2.18c1c479.chunk.js",
+    "static/css/main.4960f358.chunk.css",
+    "static/js/main.add2bbfc.chunk.js"
+  ]
+}
