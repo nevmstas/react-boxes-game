@@ -93,7 +93,6 @@ class Game extends React.Component{
     }
 
     onHideItem(id){
-        console.log(id)
         console.log('bomb - ',this.state.bombID)
 
 
@@ -110,7 +109,7 @@ class Game extends React.Component{
         )
     }
 
-    handleChangeScoreClick(){
+    handleChangeScoreClick(){ 
             this.setState(prevState => {
                 return {
                     score: (prevState.score++) + prevState.pointMultiplier,
@@ -121,7 +120,9 @@ class Game extends React.Component{
                     pointMultiplier: prevState.pointMultiplier++
                 }
             });
-    }
+            console.log(this.state.score)
+        }
+
 
     render(){
         const puzzleItems = this.state.items.map((item) => {
