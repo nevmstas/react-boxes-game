@@ -41,10 +41,13 @@ class Game extends React.Component {
   }
 
   resetPoints() {
+    console.log('reset points')
     this.setState({
       score: 0,
       pointMultiplier: 0,
     });
+
+    console.log(this.state.score)
   }
 
   updateLastScore() {
