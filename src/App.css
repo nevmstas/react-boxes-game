@@ -155,9 +155,10 @@ footer{
   font-size: 20px;
 }
 .rules-container a{
-  font-size: 30px;
+  font-size: 18px;
   margin-top: 50px;
-  color: #D5DBDB;
+  /* color: #D5DBDB; */
+  color: white;
   text-decoration: none;
   transition-duration: 0.3s;
 }
@@ -180,7 +181,7 @@ footer{
 
 .example-img img{
   height: 500px;
-  width: 500px;
+
 }
 
 .last-score{
@@ -189,6 +190,55 @@ footer{
   font-size: 30px;
   margin-left: 100px;
   margin-top: 300px;  
+}
+
+.lang-btn{
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  box-shadow: 0 0 1px black;
+  
+}
+
+
+.about-section{
+  margin-top: 100px;
+  color:white;
+}
+.about-section__title{
+  color:#333333;
+}
+
+.about-section__github{
+
+}
+
+.about-section__github a{
+  text-decoration: none;
+  color: white;
+  transition: all .2s;
+}
+
+.about-section__github a:hover{
+  text-decoration: none;
+  color: #333333;
+}
+
+
+.github{
+  color:#7700b3;
+  font-weight: bold;
+}
+
+.mail{
+  color:#8df79b;
+}
+
+.about-section__thanks{
+  color:#333333;
 }
 
 
