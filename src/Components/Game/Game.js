@@ -103,23 +103,19 @@ class Game extends React.Component {
     }
   }
 
-  handleChangeScoreClick() {
-    this.setState((prevState) => {
-      return {
-        score: prevState.score++ + prevState.pointMultiplier,
-      };
+  handleChangeScoreClick = () => {
+    const { score, pointMultiplier } = this.state;
+    this.setState({
+      score: score + 1 + pointMultiplier,
+      pointMultiplier: pointMultiplier + 1,
     });
-    this.setState((prevState) => {
-      return {
-        pointMultiplier: prevState.pointMultiplier++,
-      };
-    });
-  }
+  };
 
   render() {
     const puzzleItems = this.state.items.map((item) => {
       return (
         <PuzzleItem
+          key={item.id}
           id={item.id}
           onHide={this.onHideItem}
           onChangeScore={this.handleChangeScoreClick}
