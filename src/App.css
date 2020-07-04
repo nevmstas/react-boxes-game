@@ -1,12 +1,11 @@
-
-.app-wrapper{
-  font-family: 'Work Sans', sans-serif;
+.app-wrapper {
+  font-family: "Work Sans", sans-serif;
   background-color: dodgerblue;
   display: flex;
   flex-direction: column;
 }
 
-.header{
+.header {
   background-color: #ccccff;
   height: 200px;
   text-align: center;
@@ -14,32 +13,32 @@
   font-size: 100px;
   line-height: 200px;
   font-weight: 900;
-  color: #2B44B6;
+  color: #2b44b6;
 }
-.nav{
+.nav {
   background-color: black;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   position: sticky;
   position: -webkit-sticky;
-  top:0;
+  top: 0;
 }
-.nav ul{
-    /* display: flex;
+.nav ul {
+  /* display: flex;
     flex-wrap: wrap; */
-    list-style-type: none;
-    margin: 0;
-    margin-right: 20px;
-    padding: 0;
-    overflow: hidden;
-    background-color: lightskyblue;  
-    border-radius: 30px;
+  list-style-type: none;
+  margin: 0;
+  margin-right: 20px;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightskyblue;
+  border-radius: 30px;
 }
-.nav li{
-  float:left;
+.nav li {
+  float: left;
 }
-.nav li a{
+.nav li a {
   display: block;
-  color:white;
+  color: white;
   text-align: center;
   padding: 14px 50px;
   text-decoration: none;
@@ -47,22 +46,21 @@
   transition-duration: 0.3s;
 }
 
-.nav li a:hover:not(.about-btn){
+.nav li a:hover:not(.about-btn) {
   background-color: #80bfff;
 }
-.about-btn
-{
-   background-color: #6666ff;
-   border-radius: 30px;
+.about-btn {
+  background-color: #6666ff;
+  border-radius: 30px;
 }
-.nav img{
+.nav img {
   width: 80px;
   background-color: black;
   border-radius: 100px;
   margin-right: 20px;
   float: left;
 }
-.page-content{
+.page-content {
   display: flex;
   justify-content: center;
   background-color: dodgerblue;
@@ -70,39 +68,38 @@
   height: 900px;
 }
 
-.game-field{
+.game-field {
   display: grid;
   grid-template-columns: 140px 140px 100px;
   grid-template-rows: 140px 140px 170px;
   align-items: center;
 }
 
-.game-page{
+.game-page {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.puzzle-block
-{
-    height: 100px;
-    width: 100px;
-    background-color: greenyellow;
-    box-shadow: 0 9px #999;
-    transition-duration: 0.05s; 
+.puzzle-block {
+  height: 100px;
+  width: 100px;
+  background-color: greenyellow;
+  box-shadow: 0 9px #999;
+  transition-duration: 0.05s;
 }
 
-.puzzle-block:active{
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+.puzzle-block:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-.reset-btn{
+.reset-btn {
   display: flex;
   height: 130px;
   width: 130px;
-  background-color:palevioletred ;
+  background-color: palevioletred;
   font-size: 20px;
   color: white;
   font-weight: 900;
@@ -117,12 +114,12 @@
   transition-duration: 0.1s;
 }
 
-.reset-btn:active{
+.reset-btn:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-footer{
+footer {
   grid-area: footer;
   display: flex;
   background-color: black;
@@ -132,7 +129,7 @@ footer{
   justify-content: center;
 }
 
-.score{
+.score {
   display: flex;
   text-align: center;
   padding-top: 10px;
@@ -144,8 +141,7 @@ footer{
   transition: all 1s;
 }
 
-.rules-container{
-  
+.rules-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -154,7 +150,7 @@ footer{
   color: white;
   font-size: 20px;
 }
-.rules-container a{
+.rules-container a {
   font-size: 18px;
   margin-top: 50px;
   /* color: #D5DBDB; */
@@ -174,25 +170,24 @@ footer{
   width: 400px;
 }
 
-.rules-container li{
+.rules-container li {
   margin-bottom: 60px;
   margin-right: 40px;
 }
 
-.example-img img{
+.example-img img {
   height: 500px;
-
 }
 
-.last-score{
+.last-score {
   color: white;
   font-weight: bold;
   font-size: 30px;
   margin-left: 100px;
-  margin-top: 300px;  
+  margin-top: 300px;
 }
 
-.lang-btn{
+.lang-btn {
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -200,48 +195,39 @@ footer{
   margin-bottom: 20px;
   margin-left: 40px;
   box-shadow: 0 0 1px black;
-  
 }
 
-
-.about-section{
+.about-section {
   margin-top: 100px;
-  color:white;
+  color: white;
 }
-.about-section__title{
-  color:#333333;
-}
-
-.about-section__github{
-
+.about-section__title {
+  color: #333333;
 }
 
-.about-section__github a{
+.about-section__github {
+}
+
+.about-section__github a {
   text-decoration: none;
   color: white;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
-.about-section__github a:hover{
+.about-section__github a:hover {
   text-decoration: none;
   color: #333333;
 }
 
-
-.github{
-  color:#7700b3;
+.github {
+  color: #7700b3;
   font-weight: bold;
 }
 
-.mail{
-  color:#8df79b;
+.mail {
+  color: #8df79b;
 }
 
-.about-section__thanks{
-  color:#333333;
+.about-section__thanks {
+  color: #333333;
 }
-
-
-
-
-
