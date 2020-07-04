@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "168906621b0ad25eb7736c1630ac8237",
+    "revision": "5e9c4ba08f7475cd111d9124ca8f6e3c",
     "url": "/react-boxes-game/index.html"
   },
   {
-    "revision": "9e68105fd7e2301cae80",
+    "revision": "568785ef913079b897db",
     "url": "/react-boxes-game/static/css/main.808c42ba.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-boxes-game/static/js/2.8ad91e86.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9e68105fd7e2301cae80",
-    "url": "/react-boxes-game/static/js/main.20ca2fdd.chunk.js"
+    "revision": "568785ef913079b897db",
+    "url": "/react-boxes-game/static/js/main.4d6c5680.chunk.js"
   },
   {
     "revision": "63a70d30d2ab7b76967c",
